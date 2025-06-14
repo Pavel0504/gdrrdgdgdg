@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Страница с amoCRM чатом</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      min-height: 100vh;
+      position: relative;
+    }
+    .form-container {
+      max-width: 400px;
+      margin: 60px auto;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .form-container h1 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    /* Контейнер для кнопки чата */
+    .amo-button-holder {
+      position: fixed;
+      right: 30px;
+      bottom: 30px;
+      z-index: 9999;
+    }
+
+    /* Основная круглая кнопка */
+    .amo-button--main.amo-button--only-livechat {
+      width: 60px !important;
+      height: 60px !important;
+      border-radius: 50% !important;
+      background: #4c8bf7 !important;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .amo-button--main-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    /* Iframe чата */
+    #amo-livechat iframe {
+      width: 350px;
+      height: 500px;
+      border: none;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h1>Оставьте заявку</h1>
+    <!-- Скрипт кнопки amoCRM -->
+<script>(function(a,m,o,c,r,m){a[m]={id:"430149",hash:"60b99700f192e4228a33252b2d469244294784fe04e4c389619cdda13c78e53d",locale:"ru",inline:true,setMeta:function(p){this.params=(this.params||[]).concat([p])}};a[o]=a[o]||function(){(a[o].q=a[o].q||[]).push(arguments)};a[o+'Config']=a[o+'Config']||{};a[o+'Config'].hidden=!0;var d=a.document,s=d.createElement('script');s.async=true;s.id=m+'_script';s.src='https://gso.amocrm.ru/js/button.js';d.head&&d.head.appendChild(s)}(window,0,'amoSocialButton',0,0,'amo_social_button'));</script>
+  </div>
+
+  <!-- По умолчанию виджет подгрузится автоматически -->
+  <div class="amo-button-holder amo-horisontal">
+    <iframe
+      id="social_iframe"
+      name="social_iframe"
+      title="amoCRM CRM Plugin список социальных сетей"
+      src="https://gso.amocrm.ru/buttons/v3/html/bf59dfd56b572ee9297b90e2627aa0a79bd8d332781cbd748cff33bdd26d1e30.html?1749886732"
+      scrolling="no"
+      style="min-height: 80px; width: 0; height: 80px; border: none;"
+      class="amo-button__iframe"
+    ></iframe>
+
+    <div
+      id="amobutton"
+      class="amo-button amo-button--main amo-button--only-livechat js-amo-button"
+      data-social=""
+      style="display: none; opacity: 1;"
+    >
+      <div class="amo-button--main-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" fill="none">
+          <path fill="#fff"
+            d="M20.612 0H9.505C4.565 0 .56 4.433.56 9.895c0 4.368 2.558 8.064 6.105 9.38L10.916 24l
+               3.803-4.206h5.893c4.942 0 8.947-4.43 8.947-9.899C29.559 4.433 25.553 0 20.612 0Z
+               M8.154 11.998c-1.096 0-1.985-.98-1.985-2.195 0-1.211.889-2.196 1.985-2.196s
+               1.985.984 1.985 2.196c0 1.214-.889 2.195-1.985 2.195Z
+               M15.059 11.998c-1.096 0-1.985-.98-1.985-2.195 0-1.211.888-2.196 1.985-2.196
+               1.096 0 1.985.984 1.985 2.196 0 1.214-.89 2.195-1.985 2.195Z
+               M21.964 11.998c-1.097 0-1.986-.98-1.986-2.195 0-1.211.889-2.196
+               1.986-2.196 1.096 0 1.985.984 1.985 2.196 0 1.214-.89 2.195-1.985 2.195Z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div id="amo-livechat" class="amo-livechat amo-livechat_bottom-right amo-livechat_horizontal amo-livechat_hidden">
+      <iframe
+        title="amoCRM Live Chat"
+        name="amo-livechat-iframe"
+        src="https://gso.amocrm.ru/livechat/index.html?HZkAyBt0sn9DDHcQuIkmy"
+      ></iframe>
+    </div>
+  </div>
+
+  <!-- (Необязательно) сбрасываем бренд-подпись, если нужно -->
+  <style>
+    #amo_brand { display: none; }
+  </style>
+
+</body>
+</html>
